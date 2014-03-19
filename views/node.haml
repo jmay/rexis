@@ -1,0 +1,16 @@
+%h1 Register Obispo
+%ol
+  %li
+    %a{href: "/install"}
+      Install and register the Obispo app on your device if necessary
+  %li Open the app
+  %li Enter this code:
+
+%p.codechars
+  - @node[:code].chars.each do |c|
+    %span.codechar= c
+
+%p
+  Your contact information will be synchronized with your private
+  cloud storage and shared contacts will be added to your local
+  contacts.

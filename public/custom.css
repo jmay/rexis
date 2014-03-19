@@ -1,0 +1,47 @@
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+#body {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -4em;
+  /* Pad bottom by footer height */
+  padding: 4em 0 4em 0;
+
+  /* padding-top: 4em; */
+}
+
+.content {
+  width: 40em;
+  margin: 2em auto;
+  /* padding: 2em 1em; */
+}
+
+ol {
+  margin-top: 2em;
+}
+
+.codechars {
+  text-align: center;
+  font-size: 200%;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.codechar {
+  border: thin solid black;
+  padding: 0.1em 0.25em;
+}
+
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+#footer p {
+  margin: 1em 0;
+}

@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %title Shared Resource Registry
+    %link{href: "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/css/bootstrap.css", rel: "stylesheet"}
+    %link{href: "/#{@registry.kind}/custom.css", rel: "stylesheet"}
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+      -# .container
+      -#   .navbar-header
+      -#   %a.navbar-brand{href: "#"}
+      -#     Brand Goes Here
+      .collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li
+            %a{href: "#"} Home
+          %li
+            %a{href: "#"} About
+    #body
+      .container
+        .content= yield
+    #footer
+      .container
+        %p.text-muted
+          Sticky footer!
+
+    %script{src: "//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"}
+    %script{src: "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.js"}
