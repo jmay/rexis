@@ -15,7 +15,7 @@ RSpec::Core::RakeTask.new(:spec)
 namespace :db do
   desc "Run migrations"
   task :migrate, [:version] do |t, args|
-    APP_ENV ||= ENV["APP_ENV"] || ENV["RACK_ENV"] || "dev"
+    APP_ENV ||= ENV["APP_ENV"] || ENV["RACK_ENV"] || "development"
     require "dotenv"
     Dotenv.load ".#{APP_ENV}.env", ".env"
     require "sequel"

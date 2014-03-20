@@ -1,9 +1,10 @@
-require "dotenv"
-
-APP_ENV ||= ENV["APP_ENV"] || ENV["RACK_ENV"] || "dev"
-Dotenv.load ".#{APP_ENV}.env", ".env"
+# require "dotenv"
+#
+# APP_ENV ||= ENV["APP_ENV"] || ENV["RACK_ENV"] || "development"
+# Dotenv.load ".#{APP_ENV}.env", ".env"
 
 require "rexis"
+# rexis.config
 
 kinds = ENV["REGISTRY_KINDS"].split(',')
 

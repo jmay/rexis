@@ -36,7 +36,7 @@ class Rexis::Server < Sinatra::Base
 
   get '/at/:token' do
     if item = registry.find(token: params[:token])
-      code = item.ping
+      code = item.activate!
       display_code(code)
     else
       bad_token

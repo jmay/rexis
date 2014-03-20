@@ -41,7 +41,9 @@ must include `url` parameter; response is a JSON hash with a single
 
 ## TODO
 
-- Token and code expiration
+* Token and code expiration
+* Limit number of participants
+* Registered payload could include other attributes besides URL
 
 ## Contributing
 

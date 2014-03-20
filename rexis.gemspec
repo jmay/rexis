@@ -10,9 +10,9 @@ Gem::Specification.new do |gem|
   gem.version       = Rexis::VERSION
   gem.authors       = ["Jason W. May"]
   gem.email         = ["jmay@pobox.com"]
-  gem.description   = %q{Link Registry}
-  gem.summary       = %q{Central registry for URLs}
-  gem.homepage      = ""
+  gem.description   = %q{Rexis Registry}
+  gem.summary       = %q{Central registry for private sharing of URLsLs}
+  gem.homepage      = "https://github.com/jmay/rexis"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -20,7 +20,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "sinatra", "~> 1.4"
-  gem.add_dependency 'thin', "~> 1.5"
   gem.add_dependency 'haml', "~> 4.0"
   gem.add_dependency "sequel", "~> 4.7"
   gem.add_dependency "pg", "~> 0.17"
@@ -28,8 +27,5 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency "rake"
   gem.add_development_dependency "rspec"
-  gem.add_development_dependency "guard-rspec"
-  gem.add_development_dependency "guard-minitest"
-  gem.add_development_dependency "ruby_gntp"
   gem.add_development_dependency "rack-test"
 end
