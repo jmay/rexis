@@ -44,7 +44,7 @@ class Rexis::Server < Sinatra::Base
   end
 
   get '/for/:code' do
-    if item = registry.find(code: params[:code])
+    if item = registry.decode(params[:code])
       result = {url: item.url}
       result.to_json
     else
@@ -83,11 +83,11 @@ class Rexis::Server < Sinatra::Base
 
   def display_code(code)
     if json_request?
-      json(code: code)
+      json(code: code.code)
     else
       # this is a browser
       content_type :html
-      haml :subscribe, locals: {code: code}
+      haml :subscribe, locals: {code: code.code}
     end
   end
 

@@ -1,5 +1,6 @@
 require "spec_helper"
 require "rack/test"
+require "timecop"
 
 describe Rexis::Item do
   include Rack::Test::Methods
@@ -42,7 +43,32 @@ describe Rexis::Item do
 
       it "should be active" do
         @item.should be_active
+      end
+
+      it "codes should not be expired" do
         @item.codes.should_not be_empty
+        @item.codes.each do |code|
+          code.should_not be_expired
+        end
+      end
+
+      describe "after code expiration" do
+        before do
+          Timecop.travel(Time.now + 2 * 60 * 60)
+        end
+
+        after do
+          Timecop.return
+        end
+
+        it "item should still be active" do
+          @item.should be_active
+        end
+        it "code should be expired" do
+          @item.codes.each do |code|
+            code.should be_expired
+          end
+        end
       end
     end
 
@@ -50,12 +76,20 @@ describe Rexis::Item do
       before do
         header "Accept", "application/json"
         get "/at/#{@item.token}"
+        h = JSON.parse(last_response.body) rescue {}
+        @code = h["code"]
       end
 
       it "should return code to JSON request" do
         last_response.status.should == 200
-        h = JSON.parse(last_response.body)
-        h["code"].should_not be_nil
+        @code.should_not be_nil
+      end
+
+      describe "code" do
+        it "should map back to the item" do
+          item = registry.decode(@code)
+          item.should_not be_nil
+        end
       end
     end
   end

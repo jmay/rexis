@@ -7,7 +7,7 @@ Sequel.migration do
       String :code, null: true, index: true, unique: true
 
       Time   :created_at, null: false
-      Time   :updated_at, null: true
+      Time   :expires_at, null: true
     end
   end
 end

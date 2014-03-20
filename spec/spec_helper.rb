@@ -1,10 +1,9 @@
-APP_ENV ||= "test"
-
 require "rspec/autorun"
 
 require "logger"
 $logger = Logger.new(STDERR)
 
+ENV["APP_ENV"] ||= "test"
 require "rexis"
 
 Rexis::Server.set :root, File.expand_path("../..", __FILE__)
