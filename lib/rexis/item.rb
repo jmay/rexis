@@ -2,8 +2,7 @@ require "securerandom"
 
 module Rexis
   class Item < Sequel::Model(:registry)
-    plugin :timestamps # using default created_at and updated_at
-    # plugin :json_serializer
+    plugin :timestamps
     one_to_many :codes
 
     def self.create(attributes)
@@ -16,9 +15,8 @@ module Rexis
     end
 
     def activate!
-      code = Code.create
+      code = Code.create(expiration: ENV['REXIS_CODE_EXPIRATION'].to_i)
       add_code(code)
-      # update(code: generate_code) unless pinged?
       code
     end
 

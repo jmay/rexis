@@ -5,12 +5,12 @@ require "timecop"
 describe Rexis::Item do
   include Rack::Test::Methods
   def registry
-    @registry ||= Rexis::Registry.new(kind: "items")
+    @registry ||= Rexis::Registry.new
   end
   def app
     Rexis::Server.new(
       registry: registry,
-      domain: ENV["REGISTRY_DOMAIN"]
+      domain: ENV["REXIS_DOMAIN"]
       )
   end
 

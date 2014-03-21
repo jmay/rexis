@@ -3,7 +3,7 @@ require "rack/test"
 
 describe Rexis::Registry do
   let :registry do
-    @registry ||= Rexis::Registry.new(kind: "items")
+    @registry ||= Rexis::Registry.new
   end
 
   describe "a new item" do

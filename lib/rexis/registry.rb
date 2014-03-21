@@ -1,17 +1,11 @@
 module Rexis
   class Registry
-    attr_reader :kind
-
-    def initialize(kind:)
-      @kind = kind
-    end
-
     def add(url:)
-      items.create(kind: kind, url: url)
+      items.create(url: url)
     end
 
-    def find(args = {})
-      items.find(args.merge(kind: kind))
+    def find(args)
+      items.find(args)
     end
 
     def decode(code)

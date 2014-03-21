@@ -92,6 +92,6 @@ class Rexis::Server < Sinatra::Base
   end
 
   def url_for(item)
-    "#{domain}/#{registry.kind}/at/#{item.token}"
+    "#{domain}/at/#{item.token}"
   end
 end

@@ -20,10 +20,8 @@ provide values for the following:
 `DATABASE_URL`: location of database used by Sequel (has only been
 tested so far with PostgreSQL)
 
-`REGISTRY_DOMAIN`: Domain name used for all generated Rexis URLs
+`REXIS_DOMAIN`: Domain name used for all generated Rexis URLs
 
-`REGISTRY_KINDS`: One or more (comma-separated) labels for the objects
-to be shared
 
 ## Usage
 
@@ -33,7 +31,7 @@ A `config.ru` is provided to operate under Rack, for example:
 
 ## API
 
-`POST` to `{REGISTRY_DOMAIN}/{KIND}` to register a resource: payload
+`POST` to `{REXIS_DOMAIN}` to register a resource: payload
 must include `url` parameter; response is a JSON hash with a single
 `registry_url` value.
 
