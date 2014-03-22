@@ -18,4 +18,4 @@ tmp
 *.json
 log/*
 .powenv
-.*env
+.env*
