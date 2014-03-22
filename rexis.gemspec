@@ -24,9 +24,9 @@ Gem::Specification.new do |gem|
   gem.add_dependency "sequel", "~> 4.7"
   gem.add_dependency "pg", "~> 0.17"
   gem.add_dependency "dotenv", "~> 0.9"
+  gem.add_dependency "rake", "~> 10.1"
+  gem.add_dependency "rspec", "~> 2.12"
 
-  gem.add_development_dependency "rake"
-  gem.add_development_dependency "rspec"
   gem.add_development_dependency "rack-test"
   gem.add_development_dependency "timecop"
 end

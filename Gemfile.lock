@@ -5,6 +5,8 @@ PATH
       dotenv (~> 0.9)
       haml (~> 4.0)
       pg (~> 0.17)
+      rake (~> 10.1)
+      rspec (~> 2.12)
       sequel (~> 4.7)
       sinatra (~> 1.4)
 
@@ -21,7 +23,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.0.3)
+    rake (10.1.0)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -43,7 +45,5 @@ PLATFORMS
 
 DEPENDENCIES
   rack-test
-  rake
   rexis!
-  rspec
   timecop
