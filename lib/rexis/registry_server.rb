@@ -52,6 +52,11 @@ class Rexis::Server < Sinatra::Base
     end
   end
 
+  # default catch-all route: return Unauthorized rather than Not Found
+  get '/*' do
+    halt 401
+  end
+
   private
 
   def json(data)
